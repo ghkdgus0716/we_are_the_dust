@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>dusts</title>
+	<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+	<style type="text/css">
+
+		.du2:hover {color: blue; opacity: 1.0; filter: blur(0px);}
+		.du3:hover {color: yellow; opacity: 1.0; filter: blur(0px);}
+		.du4:hover {color: red; opacity: 1.0; filter: blur(0px);}
+		.du5:hover {color: green; opacity: 1.0; filter: blur(0px);}
+
+		body{background: black; overflow: hidden;}
+		#back{ width:800px; height:800px; left:350px; background:url('rainbow.gif'); background-size:auto 800px; position: fixed;  filter: blur(5px);   }
+		#scrollmouse{width:80px; height:80px; right:50px; bottom: 70px; background:url('scroll.gif'); position: fixed; background-size:auto 80px;}
+		#blackbox { left: 7200px; top:0px; width:1920px; height:700px;  background: black; position:absolute; filter: blur(10px); }
+		#bluedot { left: 8350px; top:350px; width:15px; height:15px; border-radius: 50%; filter: blur(8px); background: #329af9; position:absolute;}
+		#whitedot { left: 8350px; top:350px; width:10px; height:10px; border-radius: 50%; filter: blur(0.5px); background: white; position:absolute;}
+		#endd { font-size: 10px; color: white; top:370px; width: 50px; text-align: center; left:8330px; position: absolute; }
+	
+		.du1{ font-family: 'Song Myung', serif; position: fixed; left: 70px;top:70px;  opacity: 0.7;   -webkit-text-stroke: 1px white; font-size: 3.5em;  filter: blur(1px); }
+		.du2{ background:none; font-family: 'Song Myung', serif; width: 450px; position: absolute; left: 1600px;top:250px; opacity: 0.6;   -webkit-text-stroke: 1px white; font-size: 2em;  filter: blur(1px); cursor:pointer; color:black;}
+		.du3{ background:none; font-family: 'Song Myung', serif; width: 500px; position: absolute; left: 2600px;top:150px; opacity: 0.8;   -webkit-text-stroke: 1px white; font-size: 4em;  filter: blur(1px);cursor:pointer; color:black;}
+		.du4{ background:none; font-family: 'Song Myung', serif; width: 500px; position: absolute; left: 3600px;top:80px;opacity: 0.7;   -webkit-text-stroke: 2px white; font-size: 5em;  filter: blur(1px); cursor:pointer; color:black; }
+		.du5{ background:none; font-family: 'Song Myung', serif; width: 800px; position: absolute; left: 4000px;top:230px; opacity: 0.6;   -webkit-text-stroke: 1px white; font-size: 6em;  filter: blur(1px);cursor:pointer; color:black;}
+		.hwang{font-family: 'Song Myung', serif; position: fixed; left: 70px;bottom:70px; color:white; opacity: 0.7; font-size: 0.8em; line-height: 1.6; }
+
+
+
+	</style>
+
+</head>
+
+<body>
+
+	
+	<div id="back"></div>
+
+	
+
+
+	<div class="du1"> 우리는 </br>우주의</br> 아주 작은 먼지</div>
+	
+	<div class="hwang">Made by HyeonJi Hwang
+	</br>E-mail _ ghkdgus0716@gmail.com</div>
+
+	<li>
+	<a href="bluedot.html">
+	<div class="du2" style="top:200px; left:1800px; font-size: 1em;"">우주의</br> 조금 작은 먼지</div>
+	<div class="du2" style="top:600px; left:1300px; font-size: 1em;"">우주의</br> 엄청 작은 먼지</div>
+	<div class="du2" style=" left:1400px; top:200px; font-size: 4em;"> 우리는 우주의</br> 아주 중간 먼지</div>	
+	<div class="du2" style=" left:2100px; top:500px; font-size: 3.5em;"> We are </br> the very middle of </br> in the universe</div>	
+	</a></li>
+
+	<li>
+	<a href="bubbles.html">
+	<div class="du3" style="top:100px; left:2400px;"> We are </br> the smallest dust </br> in the universe</div> 
+	<div class="du3" style="font-size: 5em; top:370px; left:2200px;"> 우리는 </br>우주의 조금 큰 먼지</div> 
+	<div class="du3" style="font-size: 5em; left:1500px; top:50px;"> 우리는 우주의 먼지</div>
+	</a></li>
+
+	<li>
+	<a href="dots.html">
+	<div class="du4" style=" top:350px; left :3200px;"> 우주의</br> 그냥 그런 먼지</div> 
+	<div class="du4" style="top:150px; left:1250px;"> The dust</br> of the universe</div> 
+	</a></li>
+
+	<li>
+	<a href="powersof10.html">
+	<div class="du5" style=" top:350px; left:1900px;"> We are </br> the biggest dust </br> in the universe</div> 
+	<div class="du5" style="top:70px; left:3500px;"> 우주의 아주 큰 먼지</div> 
+	</a></li>
+
+ 	<div id="blackbox"> </div>
+ 	<div id="whitedot"> </div>
+ 	<div id="bluedot"> </div>
+ 	<div id="endd">The end</div>
+
+
+	<div id="scrollmouse"></div>
+
+	<script type="text/javascript">
+
+	window.onwheel = function(e){
+
+	var scroll = 100;
+
+	if(e.deltaY < 0){ scroll = -scroll; } 
+
+	window.scrollBy(scroll, 0);	
+
+      //여기까지는 가로방향 스크롤
+
+
+
+ //1. 한개의 오브젝트 id를 가지고 패럴렉스
+
+	//먼저 전체 폭대비 현재 위치의 비율을 구한다.
+
+	var ratio = window.pageXOffset / 7000;
+
+	
+
+	//해당 오브젝트가 움직일 전체 거리를 설정한다.
+
+	var distancedu2 = 3000;
+	var distancedu3 = 3800;
+	var distancedu4 = 4200;
+	var distancedu5 = 4800;
+
+
+	//2. 클래스를 사용해 여러가지 오브젝트에 동시에 적용하기
+
+	
+
+	var x = document.getElementsByClassName("du2");
+
+	for(var i=0; i<x.length; i++){
+
+	 	var distancedu2 = 3000;
+
+	 	var ddu2 = window.pageXOffset - distancedu2*ratio;
+
+	 	x[i].style.transform = "translateX("+ ddu2 +"px)";
+
+	}
+
+	var x = document.getElementsByClassName("du3");
+
+	for(var i=0; i<x.length; i++){
+
+	 	var distancedu3 = 3800;
+
+	 	var ddu3 = window.pageXOffset - distancedu3*ratio;
+
+	 	x[i].style.transform = "translateX("+ ddu3 +"px)";
+
+	}
+
+
+	var x = document.getElementsByClassName("du4");
+
+	for(var i=0; i<x.length; i++){
+
+	 	var distancedu4 = 4200;
+
+	 	var ddu4 = window.pageXOffset - distancedu4*ratio;
+
+	 	x[i].style.transform = "translateX("+ ddu4 +"px)";
+
+	}
+
+
+	var x = document.getElementsByClassName("du5");
+
+	for(var i=0; i<x.length; i++){
+
+	 	var distancedu5 = 4800;
+
+	 	var ddu5 = window.pageXOffset - distancedu5*ratio;
+
+	 	x[i].style.transform = "translateX("+ ddu5 +"px)";
+
+	}
+	
+
+	//3. id와 거리를 사용한 경우의 함수를 만들어봅시다.
+
+	function parallax(id,distance){
+
+		var dSign = window.pageXOffset - distance*ratio;
+
+		var t = document.getElementById(id);
+
+		t.style.transform = "translateX("+ dSign +"px)";
+
+	}
+
+
+
+	//4. class를 사용한 경우를 함수로 만들어봅시다.
+
+	function parallaxC(className,distance){
+
+		var ddu1 = window.pageXOffset - distance*ratio;
+
+		var t = document.getElementsByClassName(className);
+
+		for(var i=0; i<t.length; i++){
+
+			t[i].style.transform = "translateX("+ ddu1 +"px)";	
+
+		}
+
+	}
+
+
+
+	//parallax("sun",100); //함수로 만들어 간편하게 적용
+
+	//parallaxC("sign",14000); //클래스를 함수로
+
+
+
+}
+
+	</script>
+
+</body>
+
+</html>
+
+ 
